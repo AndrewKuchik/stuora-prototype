@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08040b">
+<title>STUORA — интерактивное меню</title>
+</head>
+<body>
+<style>
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url(data:font/woff2;base64,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) format('woff2');}
+
+:root{
+  --bg:#08040b;
+  --bg2:#100616;
+  --surface:rgba(255,255,255,.035);
+  --surface2:rgba(255,255,255,.06);
+  --line:rgba(199,118,180,.20);
+  --line-strong:rgba(199,118,180,.42);
+  --purple:#6d134c;
+  --magenta:#c2185b;
+  --pink:#a77695;
+  --text:#f7f1f7;
+  --muted:#b596ab;
+  --glow:0 0 22px rgba(194,24,91,.38);
+  --glow-soft:0 0 32px rgba(109,19,76,.55);
+  --display:'Bebas Neue','Oswald','Anton','Arial Narrow',sans-serif;
+  --cond:'Oswald','PT Sans Narrow','Roboto Condensed','Arial Narrow','Segoe UI',system-ui,sans-serif;
+  --maxw:440px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(109,19,76,.55) 0%, rgba(8,4,11,0) 55%),
+    radial-gradient(90% 60% at 90% 110%, rgba(194,24,91,.28) 0%, rgba(8,4,11,0) 55%),
+    linear-gradient(180deg,var(--bg2),var(--bg) 40%);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:var(--cond);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:.01em;
+  min-height:100dvh;
+  display:flex;justify-content:center;
+}
+
+#app{
+  width:100%;max-width:var(--maxw);
+  min-height:100dvh;
+  display:flex;flex-direction:column;
+  position:relative;
+  padding:0 20px calc(24px + env(safe-area-inset-bottom));
+}
+
+/* ---------- top bar ---------- */
+.top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0 8px;position:sticky;top:0;z-index:5;
+  background:linear-gradient(180deg,var(--bg) 55%,rgba(8,4,11,0));
+}
+.brand{
+  font-family:var(--display);font-size:26px;line-height:1;
+  letter-spacing:.14em;color:var(--text);
+  text-shadow:0 0 16px rgba(194,24,91,.7),0 0 3px rgba(247,241,247,.4);
+  cursor:pointer;user-select:none;
+}
+.brand .spark{color:var(--magenta)}
+.top-right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{
+  font-family:var(--cond);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);background:none;border:0;padding:4px 9px;border-radius:999px;cursor:pointer;font-weight:500;
+}
+.lang button.on{background:var(--purple);color:var(--text);box-shadow:var(--glow)}
+.menu-btn{
+  font-family:var(--cond);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:6px;font-weight:500;
+}
+.menu-btn:hover{color:var(--text)}
+
+/* ---------- screens ---------- */
+.stage{flex:1;display:flex;flex-direction:column;justify-content:center;padding:14px 0 26px}
+.screen{display:none;animation:rise .45s cubic-bezier(.2,.7,.2,1)}
+.screen.active{display:flex;flex-direction:column;gap:22px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen{animation:none}*{transition:none!important}}
+
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--magenta);font-weight:600}
+h1.q{
+  font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.02em;
+  font-size:30px;line-height:1.04;text-wrap:balance;color:var(--text);
+}
+.sub{color:var(--muted);font-size:15px;line-height:1.45;max-width:34ch}
+
+/* ---------- buttons ---------- */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{
+  font-family:var(--cond);font-weight:500;text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;color:var(--text);text-align:left;
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:20px 16px;cursor:pointer;transition:.2s;min-height:76px;display:flex;align-items:flex-end;
+  position:relative;overflow:hidden;
+}
+.tile:hover,.tile:focus-visible{border-color:var(--line-strong);background:var(--surface2);box-shadow:var(--glow-soft);outline:none}
+.tile.wide{grid-column:1/-1;align-items:center;justify-content:center;text-align:center}
+.tile .k{position:absolute;top:12px;left:16px;font-size:22px;opacity:.5}
+
+.cta{
+  font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:17px;
+  color:var(--text);background:linear-gradient(180deg,#8a1a61,var(--purple));
+  border:1px solid var(--line-strong);border-radius:14px;padding:17px;cursor:pointer;width:100%;
+  box-shadow:var(--glow);transition:.2s;
+}
+.cta:hover,.cta:focus-visible{filter:brightness(1.12);box-shadow:0 0 30px rgba(194,24,91,.6);outline:none}
+.cta.ghost{background:transparent;box-shadow:none;border-color:var(--line);color:var(--muted);font-weight:500}
+.cta.ghost:hover{color:var(--text);border-color:var(--line-strong);filter:none}
+.linkline{background:none;border:0;color:var(--muted);font-family:var(--cond);font-size:14px;letter-spacing:.04em;cursor:pointer;text-transform:uppercase;padding:6px}
+.linkline:hover{color:var(--magenta)}
+.stack{display:flex;flex-direction:column;gap:10px}
+
+/* ---------- recommendation card ---------- */
+.card{
+  background:linear-gradient(180deg,rgba(109,19,76,.28),var(--surface));
+  border:1px solid var(--line-strong);border-radius:22px;padding:26px 22px;
+  box-shadow:var(--glow-soft);position:relative;overflow:hidden;
+}
+.card .icon{width:54px;height:54px;margin-bottom:14px;opacity:.9}
+.card .icon svg{width:100%;height:100%}
+.name{font-family:var(--display);font-size:40px;line-height:.94;letter-spacing:.04em;text-shadow:0 0 18px rgba(194,24,91,.45)}
+.price{font-family:var(--display);font-size:30px;color:var(--magenta);letter-spacing:.06em;line-height:1;margin-top:4px;font-variant-numeric:tabular-nums}
+.tier{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);font-weight:600;margin-top:12px}
+.story{color:#efe3ee;font-size:16px;line-height:1.5;margin-top:10px;font-weight:300}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line-strong),transparent);margin:6px 0}
+
+/* chase / upsell row */
+.upsell{
+  display:flex;align-items:center;gap:12px;
+  border:1px dashed var(--line);border-radius:14px;padding:13px 15px;background:rgba(255,255,255,.02);
+}
+.upsell .ug{flex:1}
+.upsell .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);font-weight:600}
+.upsell .uname{font-family:var(--cond);font-weight:500;font-size:16px;margin-top:2px}
+.upsell .un{color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:2px}
+.addbtn{
+  font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:13px;white-space:nowrap;
+  color:var(--text);background:var(--magenta);border:0;border-radius:10px;padding:10px 13px;cursor:pointer;box-shadow:var(--glow);transition:.15s;
+}
+.addbtn.done{background:transparent;border:1px solid var(--line-strong);color:var(--pink);box-shadow:none;cursor:default}
+.addbtn:not(.done):hover{filter:brightness(1.12)}
+
+/* flight compare (decoy) */
+.compare{display:grid;grid-template-columns:.8fr 1.25fr 1fr;gap:8px;margin-top:4px}
+.col{border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center;background:var(--surface)}
+.col.hero{border-color:var(--magenta);background:linear-gradient(180deg,rgba(194,24,91,.18),var(--surface));box-shadow:var(--glow)}
+.col.faint{opacity:.62}
+.col .cl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.2;min-height:26px}
+.col.hero .cl{color:var(--text);font-weight:600}
+.col .cp{font-family:var(--display);font-size:30px;letter-spacing:.05em;margin-top:6px;font-variant-numeric:tabular-nums}
+.col.hero .cp{color:var(--magenta);font-size:38px}
+.col .best{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta);font-weight:600;margin-top:4px;min-height:13px}
+
+/* flight themes */
+.flights{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.flight{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 14px;cursor:pointer;transition:.2s;text-align:left}
+.flight:hover,.flight:focus-visible{border-color:var(--line-strong);box-shadow:var(--glow-soft);outline:none}
+.flight .ft{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:19px}
+.flight .fd{color:var(--muted);font-size:12px;line-height:1.4;margin-top:6px}
+.flight.sel{border-color:var(--magenta);background:linear-gradient(180deg,rgba(194,24,91,.16),var(--surface))}
+
+/* summary */
+.rows{display:flex;flex-direction:column;gap:2px}
+.row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)}
+.row .rn{font-family:var(--cond);font-weight:400;font-size:16px}
+.row .rk{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-left:8px}
+.row .rp{font-family:var(--display);font-size:22px;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.totrow{display:flex;justify-content:space-between;align-items:baseline;padding-top:14px}
+.totrow .tl{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:15px;color:var(--muted)}
+.totrow .tp{font-family:var(--display);font-size:44px;color:var(--magenta);letter-spacing:.05em;text-shadow:var(--glow);font-variant-numeric:tabular-nums}
+.empty{color:var(--muted);font-size:15px;text-align:center;padding:20px}
+
+/* confirm / show bartender */
+.confirm{align-items:center;text-align:center;gap:18px}
+.seal{width:96px;height:96px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;box-shadow:var(--glow-soft);background:radial-gradient(circle,rgba(109,19,76,.5),transparent)}
+.seal svg{width:52px;height:52px}
+
+/* quick menu */
+.qm{display:flex;flex-direction:column;gap:0}
+.qcat{padding:15px 2px;border-bottom:1px solid var(--line)}
+.qcat .qh{display:flex;justify-content:space-between;align-items:baseline}
+.qcat .qn{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:18px}
+.qcat .qp{font-family:var(--display);font-size:22px;color:var(--magenta);letter-spacing:.05em}
+.qcat .qi{color:var(--muted);font-size:13px;line-height:1.5;margin-top:5px}
+
+/* footer note */
+.foot{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:14px 0 4px;opacity:.65}
+.paper-note{font-size:12px;color:var(--pink);text-align:center;line-height:1.5;border-top:1px solid var(--line);padding-top:14px;margin-top:2px}
+
+/* toast */
+#toast{
+  position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);
+  background:rgba(20,10,24,.96);border:1px solid var(--line-strong);color:var(--text);
+  padding:12px 18px;border-radius:12px;font-size:13px;letter-spacing:.03em;box-shadow:var(--glow-soft);
+  opacity:0;pointer-events:none;transition:.25s;z-index:30;max-width:80%;text-align:center;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.hint{font-size:12px;color:var(--pink);letter-spacing:.02em;text-align:center;opacity:.8}
+</style>
+
+<div id="app">
+  <div class="top" id="topbar">
+    <div class="brand" onclick="home()">STUORA<span class="spark"> ✦</span></div>
+    <div class="top-right">
+      <div class="lang" id="lang">
+        <button data-l="ru" class="on" onclick="setLang('ru')">RU</button>
+        <button data-l="en" onclick="setLang('en')">EN</button>
+        <button data-l="lv" onclick="setLang('lv')">LV</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" onclick="openQuick()">≡ <span data-i18n="menu">Меню</span></button>
+    </div>
+  </div>
+
+  <div class="stage">
+
+    <!-- S1 splash -->
+    <section class="screen active" id="s1">
+      <div style="text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;margin-top:8px">
+        <div class="eyebrow" data-i18n="entryTag">Любопытно?</div>
+        <div class="brand" style="font-size:64px;letter-spacing:.16em;margin:6px 0">STUORA</div>
+        <div class="sub" style="text-align:center" data-i18n="entryLine">Соберите свой балтийский флайт — тёплый, локальный, ваш.</div>
+      </div>
+      <div class="stack" style="margin-top:10px">
+        <button class="cta" onclick="go('s2')" data-i18n="continue">Продолжить →</button>
+        <button class="linkline" onclick="openQuick()" data-i18n="justMenu">Просто покажи меню</button>
+      </div>
+      <div class="paper-note" data-i18n="paperNote">Бумажное меню и бармен всегда рядом — это лишь ваш гид по вкусам.</div>
+    </section>
+
+    <!-- S2 mood -->
+    <section class="screen" id="s2">
+      <div><div class="eyebrow" data-i18n="step1">Шаг 1</div><h1 class="q" data-i18n="moodTitle">Какой у вас вечер?</h1></div>
+      <div class="tiles">
+        <button class="tile" onclick="chooseMood('relax')"><span class="k">☾</span><span data-i18n="mood_relax">Расслабиться</span></button>
+        <button class="tile" onclick="chooseMood('romance')"><span class="k">♥</span><span data-i18n="mood_romance">Романтика</span></button>
+        <button class="tile" onclick="chooseMood('discover')"><span class="k">✦</span><span data-i18n="mood_discover">Хочу открытие</span></button>
+        <button class="tile" onclick="chooseMood('classic')"><span class="k">◈</span><span data-i18n="mood_classic">Классика</span></button>
+        <button class="tile wide" onclick="chooseMood('surprise')"><span data-i18n="mood_surprise">Удиви меня</span></button>
+      </div>
+    </section>
+
+    <!-- S3 clarify -->
+    <section class="screen" id="s3">
+      <div><div class="eyebrow" data-i18n="step2">Шаг 2</div><h1 class="q" data-i18n="clarifyTitle">Сладкое — или пикантное?</h1></div>
+      <div class="stack">
+        <button class="tile wide" onclick="chooseClarify('sweet')"><span data-i18n="clarify_sweet">🍇 Сладкое</span></button>
+        <button class="tile wide" onclick="chooseClarify('spicy')"><span data-i18n="clarify_spicy">🌶 Пикантное · умами</span></button>
+      </div>
+    </section>
+
+    <!-- S4 recommendation (built by JS) -->
+    <section class="screen" id="s4"></section>
+
+    <!-- S5 flight builder -->
+    <section class="screen" id="s5">
+      <div><div class="eyebrow" data-i18n="flightEyebrow">Флайт · 15</div><h1 class="q" data-i18n="flightTitle">Соберите путешествие</h1>
+        <div class="sub" data-i18n="flightSub">3 настойки на гравированной доске — see &amp; taste.</div></div>
+      <div class="flights" id="flightGrid"></div>
+      <div class="compare">
+        <div class="col faint"><div class="cl" data-i18n="compare_single">1 настойка</div><div class="cp">5</div><div class="best"></div></div>
+        <div class="col hero"><div class="cl" data-i18n="compare_flight">Флайт из 3</div><div class="cp">15</div><div class="best" data-i18n="compare_best">★ лучший выбор</div></div>
+        <div class="col faint"><div class="cl" data-i18n="compare_cremant">Crémant для двоих</div><div class="cp">13</div><div class="best"></div></div>
+      </div>
+      <button class="cta" id="flightConfirm" onclick="confirmFlight()" disabled style="opacity:.5" data-i18n="chooseFlight">Выбрать флайт</button>
+    </section>
+
+    <!-- S6 summary (built by JS) -->
+    <section class="screen" id="s6"></section>
+
+    <!-- confirm -->
+    <section class="screen confirm" id="sc">
+      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="#f7f1f7" stroke-width="1.3"><path d="M5 13l4 4L19 7"/></svg></div>
+      <h1 class="q" data-i18n="confirmTitle">Покажите этот экран бармену</h1>
+      <div id="confirmList" class="rows" style="width:100%"></div>
+      <div class="sub" style="text-align:center" data-i18n="confirmSub">Бумажное меню и бармен всегда рядом — это лишь ваш гид.</div>
+      <div class="stack" style="width:100%;margin-top:6px">
+        <button class="cta ghost" onclick="go('s7')" data-i18n="laterHour">…через час за столом</button>
+        <button class="linkline" onclick="home()" data-i18n="startOver">Заново</button>
+      </div>
+    </section>
+
+    <!-- S7 second round -->
+    <section class="screen" id="s7">
+      <div class="eyebrow" data-i18n="secondRound">Второй раунд</div>
+      <h1 class="q" data-i18n="s7Title">Не желаете ещё один — на этот раз что-то освежающее?</h1>
+      <div class="stack">
+        <button class="cta" onclick="addS7()"><span data-i18n="s7pick">Carrot &amp; Dill Highball</span> · 9</button>
+        <button class="cta ghost" onclick="home()" data-i18n="notNow">Не сейчас</button>
+      </div>
+    </section>
+
+    <!-- quick menu -->
+    <section class="screen" id="qm">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <h1 class="q" data-i18n="quickMenuTitle">Меню</h1>
+        <button class="linkline" onclick="go('s1')" data-i18n="backGuide">← Гид</button>
+      </div>
+      <div class="qm" id="qmList"></div>
+      <div class="hint" data-i18n="quickHint">Signature — первыми: самые фирменные бокалы бара.</div>
+    </section>
+
+  </div>
+
+  <div class="foot">STUORA · прототип цифрового гида</div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ---------------- data ---------------- */
+const SIG = {
+  tsm:{name:"Tomato & Sprats Mary",price:10,tier:"signature",chase:"hrenovuha",
+       ru:"Звучит смело — на вкус тепло и по-домашнему: томат, дымок и лёгкая соль моря.",
+       en:"Sounds bold — tastes warm and homey: tomato, smoke and a whisper of sea salt."},
+  clover:{name:"Clover Club",price:10,tier:"signature",chase:"raspberrypine",
+       ru:"Малина и хвойный джин под шёлковой пеной — мягкий, романтичный, обманчиво лёгкий.",
+       en:"Raspberry and pine gin under a silk foam — soft, romantic, deceptively easy."},
+  carrot:{name:"Carrot & Dill",price:10,tier:"signature",chase:"carrotbourbon",
+       ru:"Самый неожиданно освежающий бокал в меню — на вкус как летний сад, а не «морковка».",
+       en:"The most unexpectedly refreshing glass here — a summer garden, not a carrot."},
+  cherry:{name:"Cherry Boulevardier",price:10,tier:"signature",chase:"cherrybourbon",
+       ru:"Вишнёвый бурбон, кампари и вермут — тёплый, глубокий, для медленного вечера вдвоём.",
+       en:"Cherry bourbon, campari and vermouth — warm, deep, made for a slow evening for two."},
+  cowberry:{name:"Cowberry Negroni",price:10,tier:"signature",chase:"redcurrant",
+       ru:"Тот самый Negroni, только с балтийской брусникой в финале.",
+       en:"The Negroni you love — with a Baltic cowberry twist in the finish."}
+};
+const INF = {
+  hrenovuha:{name:"Hrenovuha",ru:"хрен и мёд — дерзкий сосед графина у бабушки",en:"horseradish & honey — grandma's decanter, reborn"},
+  raspberrypine:{name:"Raspberry & Pine Gin",ru:"малина и хвоя, сухой финиш",en:"raspberry & pine, dry finish"},
+  carrotbourbon:{name:"Carrot & Dill Bourbon",ru:"морковь и укроп на мягком бурбоне",en:"carrot & dill on a soft bourbon"},
+  cherrybourbon:{name:"Cherry Bourbon",ru:"вишня и миндаль, тёплый бурбонный финиш",en:"cherry & almond, warm bourbon finish"},
+  redcurrant:{name:"Redcurrant & Hibiscus Tequila",ru:"кислая смородина и гибискус",en:"tart redcurrant & floral hibiscus"}
+};
+const FLIGHTS = {
+  baltic:{ru:"Балтийский",en:"Baltic",items:"Tomato & Sprats · Hrenovuha · Carrot & Dill"},
+  umami:{ru:"Умами",en:"Umami",items:"Tomato & Sprats · Mushroom · Smoked Plum"},
+  bold:{ru:"Смелый",en:"Bold",items:"Hrenovuha · Blackcurrant & Chilli · Mushroom"},
+  garden:{ru:"Сад",en:"Garden",items:"Passionfruit · Vanilla & Grape · Raspberry & Pine"}
+};
+const ROUTE = {
+  relax:{clarify:true, sweet:"clover", spicy:"carrot"},
+  romance:{rec:"cherry", cremant:true},
+  discover:{rec:"tsm", pushFlight:true},
+  classic:{rec:"cowberry"},
+  surprise:{random:true}
+};
+
+/* ---------------- i18n ---------------- */
+const T = {
+  ru:{menu:"Меню",entryTag:"Любопытно?",entryLine:"Соберите свой балтийский флайт — тёплый, локальный, ваш.",
+    continue:"Продолжить →",justMenu:"Просто покажи меню",
+    paperNote:"Бумажное меню и бармен всегда рядом — это лишь ваш гид по вкусам.",
+    step1:"Шаг 1",step2:"Шаг 2",moodTitle:"Какой у вас вечер?",
+    mood_relax:"Расслабиться",mood_romance:"Романтика",mood_discover:"Хочу открытие",mood_classic:"Классика",mood_surprise:"Удиви меня",
+    clarifyTitle:"Сладкое — или пикантное?",clarify_sweet:"🍇 Сладкое",clarify_spicy:"🌶 Пикантное · умами",
+    take:"Беру",another:"Другой вариант",wantFlight:"Хочу флайт вместо",pairsWith:"Отлично к паре",add:"Добавить",added:"В заказе ✓",
+    flightEyebrow:"Флайт · 15",flightTitle:"Соберите путешествие",flightSub:"3 настойки на гравированной доске — see & taste.",
+    compare_single:"1 настойка",compare_flight:"Флайт из 3",compare_best:"★ лучший выбор",compare_cremant:"Crémant для двоих",chooseFlight:"Выбрать флайт",
+    summaryTitle:"Ваш выбор",total:"Итого",highballNudge:"Удлинить настойку домашней комбучей?",highballAdd:"Хайбол +3",
+    showBartender:"Показать бармену",cremantNudge:"Сделайте вечер событием — Crémant для двоих",
+    confirmTitle:"Покажите этот экран бармену",confirmSub:"Бумажное меню и бармен всегда рядом — это лишь ваш гид.",
+    laterHour:"…через час за столом",startOver:"Заново",secondRound:"Второй раунд",
+    s7Title:"Не желаете ещё один — на этот раз что-то освежающее?",s7pick:"Carrot & Dill Highball",notNow:"Не сейчас",
+    quickMenuTitle:"Меню",backGuide:"← Гид",quickHint:"Signature — первыми: самые фирменные бокалы бара.",
+    lvSoon:"Латышский — в разработке для пилота",emptyCart:"Пока ничего не выбрано",addToOrder:"Добавьте, что понравится"},
+  en:{menu:"Menu",entryTag:"Curious?",entryLine:"Build your Baltic flight — warm, local, yours.",
+    continue:"Continue →",justMenu:"Just show the menu",
+    paperNote:"The paper menu and bartender are always here — this is only your taste guide.",
+    step1:"Step 1",step2:"Step 2",moodTitle:"What kind of evening?",
+    mood_relax:"Relax",mood_romance:"Romance",mood_discover:"Discover",mood_classic:"Classic",mood_surprise:"Surprise me",
+    clarifyTitle:"Sweet — or savoury?",clarify_sweet:"🍇 Sweet",clarify_spicy:"🌶 Savoury · umami",
+    take:"I'll take it",another:"Another one",wantFlight:"A flight instead",pairsWith:"Perfect chase",add:"Add",added:"Added ✓",
+    flightEyebrow:"Flight · 15",flightTitle:"Build your journey",flightSub:"3 infusions on an engraved board — see & taste.",
+    compare_single:"1 infusion",compare_flight:"Flight of 3",compare_best:"★ best pick",compare_cremant:"Crémant for two",chooseFlight:"Choose flight",
+    summaryTitle:"Your choice",total:"Total",highballNudge:"Stretch your infusion with house kombucha?",highballAdd:"Highball +3",
+    showBartender:"Show the bartender",cremantNudge:"Make it an occasion — Crémant for two",
+    confirmTitle:"Show this screen to the bartender",confirmSub:"The paper menu and bartender are always here — this is only your guide.",
+    laterHour:"…an hour later at the table",startOver:"Start over",secondRound:"Second round",
+    s7Title:"One more — something refreshing this time?",s7pick:"Carrot & Dill Highball",notNow:"Not now",
+    quickMenuTitle:"Menu",backGuide:"← Guide",quickHint:"Signature first — the bar's most distinctive glasses.",
+    lvSoon:"Latvian — coming for the pilot",emptyCart:"Nothing selected yet",addToOrder:"Add whatever you like"}
+};
+const QMENU = [
+  {n:"Signature",p:"10",ru:"Tomato & Sprats Mary · Carrot & Dill · Cowberry Negroni · Clover Club · Cherry Boulevardier",en:"Tomato & Sprats Mary · Carrot & Dill · Cowberry Negroni · Clover Club · Cherry Boulevardier"},
+  {n:"One-Sip",p:"10",ru:"BBQ Old Fashioned · Hanky Panky · Dry Martini · Pickle Martini · Milk Punch",en:"BBQ Old Fashioned · Hanky Panky · Dry Martini · Pickle Martini · Milk Punch"},
+  {n:"Classic",p:"10",ru:"Daiquiri · Margarita · Negroni · Manhattan · French 75 · Gimlet",en:"Daiquiri · Margarita · Negroni · Manhattan · French 75 · Gimlet"},
+  {n:"Настойки / Infusions",p:"5",ru:"Hrenovuha · Mushroom Bourbon · Smoked Plum · Passionfruit · Blackcurrant & Chilli · Rhubarb Gin · …",en:"Hrenovuha · Mushroom Bourbon · Smoked Plum · Passionfruit · Blackcurrant & Chilli · Rhubarb Gin · …"},
+  {n:"Хайболы / Highballs",p:"8–9",ru:"настойка + домашняя комбуча / тоник / сода",en:"infusion + house kombucha / tonic / soda"},
+  {n:"Crémant / Beer",p:"·",ru:"игристое для особого вечера · лагер",en:"sparkling for a special evening · lager"},
+  {n:"Еда / Food",p:"·",ru:"соленья · террин · местный сыр · ржаной хлеб · оливки",en:"pickles · terrine · local cheese · rye bread · olives"}
+];
+
+/* glass icon */
+const GLASS = '<svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.1"><path d="M4 4h16l-6 8v6M4 4l6 8M14 18h-4M12 12v6"/><circle cx="12" cy="3.2" r="1" fill="#c2185b" stroke="none"/></svg>';
+
+/* ---------------- state ---------------- */
+let S = {lang:"ru", mood:null, clarify:null, rec:null, cart:[], selFlight:null, cremant:false, pushFlight:false};
+function t(k){return (T[S.lang]||T.en)[k] ?? T.en[k] ?? k;}
+
+/* ---------------- nav ---------------- */
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById(id); el.classList.add('active');
+  document.getElementById('topbar').scrollIntoView({block:'start'});
+  window.scrollTo(0,0);
+}
+function home(){ S={lang:S.lang,mood:null,clarify:null,rec:null,cart:[],selFlight:null,cremant:false,pushFlight:false}; go('s1'); }
+function openQuick(){ buildQuick(); go('qm'); }
+
+/* ---------------- language ---------------- */
+function setLang(l){
+  if(l==='lv'){ toast(t('lvSoon')); return; }
+  S.lang=l;
+  document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  applyI18n();
+  // rebuild dynamic screens if visible
+  if(document.getElementById('s4').classList.contains('active')) buildRec();
+  if(document.getElementById('s6').classList.contains('active')) buildSummary();
+  if(document.getElementById('qm').classList.contains('active')) buildQuick();
+  buildFlights();
+}
+function applyI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ el.textContent=t(el.getAttribute('data-i18n')); });
+}
+
+/* ---------------- flow ---------------- */
+function chooseMood(m){
+  S.mood=m; const r=ROUTE[m];
+  if(r.clarify){ go('s3'); return; }
+  if(r.random){ const keys=Object.keys(SIG); S.rec=keys[Math.floor(rnd()*keys.length)]; }
+  else S.rec=r.rec;
+  S.cremant=!!r.cremant; S.pushFlight=!!r.pushFlight;
+  buildRec(); go('s4');
+}
+function chooseClarify(c){
+  S.clarify=c; S.rec=ROUTE[S.mood][c];
+  buildRec(); go('s4');
+}
+// deterministic-ish pseudo random (avoid Math.random determinism concerns is fine here)
+function rnd(){ return Math.random(); }
+
+function buildRec(){
+  const s=SIG[S.rec], ch=INF[s.chase];
+  const el=document.getElementById('s4');
+  const inCart=S.cart.some(i=>i.id==='chase-'+s.chase);
+  el.innerHTML=`
+    <div class="card">
+      <div class="icon">${GLASS}</div>
+      <div class="name">${s.name}</div>
+      <div class="price">${s.price}</div>
+      <div class="tier">${s.tier}</div>
+      <div class="story">${s[S.lang]||s.en}</div>
+    </div>
+    <div class="stack">
+      <button class="cta" onclick="takeRec()">${t('take')}</button>
+      <div style="display:flex;gap:10px">
+        <button class="cta ghost" style="flex:1" onclick="anotherRec()">${t('another')}</button>
+        <button class="cta ghost" style="flex:1" onclick="go('s5')">${t('wantFlight')}</button>
+      </div>
+    </div>
+    <div class="upsell">
+      <div class="ug">
+        <div class="lbl">${t('pairsWith')}</div>
+        <div class="uname">${ch.name} · 5</div>
+        <div class="un">${ch[S.lang]||ch.en}</div>
+      </div>
+      <button class="addbtn ${inCart?'done':''}" id="chaseBtn" onclick="addChase('${s.chase}')">${inCart?t('added'):t('add')+' +5'}</button>
+    </div>
+    ${S.cremant?`<div class="upsell"><div class="ug"><div class="lbl">✦</div><div class="uname">${t('cremantNudge')}</div></div><button class="addbtn ${S.cart.some(i=>i.id==='cremant')?'done':''}" onclick="addCremant()">${S.cart.some(i=>i.id==='cremant')?t('added'):'+13'}</button></div>`:''}
+    ${S.pushFlight?`<div class="hint">↑ ${t('wantFlight')}: ${FLIGHTS.baltic[S.lang]} · ${FLIGHTS.bold[S.lang]}</div>`:''}
+  `;
+}
+function anotherRec(){
+  const keys=Object.keys(SIG).filter(k=>k!==S.rec);
+  S.rec=keys[Math.floor(rnd()*keys.length)];
+  buildRec();
+}
+function takeRec(){
+  const s=SIG[S.rec];
+  if(!S.cart.some(i=>i.id==='rec-'+S.rec)) S.cart.push({id:'rec-'+S.rec,name:s.name,price:s.price,kind:'cocktail'});
+  buildSummary(); go('s6');
+}
+function addChase(id){
+  if(S.cart.some(i=>i.id==='chase-'+id)) return;
+  S.cart.push({id:'chase-'+id,name:INF[id].name,price:5,kind:'infusion',chase:true});
+  const b=document.getElementById('chaseBtn'); if(b){b.classList.add('done');b.textContent=t('added');}
+  toast(t('added'));
+}
+function addCremant(){
+  if(S.cart.some(i=>i.id==='cremant')) return;
+  S.cart.push({id:'cremant',name:"Crémant",price:13,kind:'cremant'});
+  buildRec(); toast(t('added'));
+}
+
+/* flights */
+function buildFlights(){
+  const g=document.getElementById('flightGrid'); if(!g) return;
+  g.innerHTML=Object.entries(FLIGHTS).map(([k,f])=>`
+    <button class="flight ${S.selFlight===k?'sel':''}" onclick="selFlight('${k}')">
+      <div class="ft">${f[S.lang]||f.en}</div><div class="fd">${f.items}</div></button>`).join('');
+}
+function selFlight(k){
+  S.selFlight=k; buildFlights();
+  const b=document.getElementById('flightConfirm'); b.disabled=false; b.style.opacity=1;
+}
+function confirmFlight(){
+  if(!S.selFlight) return;
+  const f=FLIGHTS[S.selFlight];
+  S.cart=S.cart.filter(i=>i.kind!=='flight');
+  S.cart.push({id:'flight-'+S.selFlight,name:(f[S.lang]||f.en)+' flight',price:15,kind:'flight'});
+  buildSummary(); go('s6');
+}
+
+/* summary */
+function buildSummary(){
+  const el=document.getElementById('s6');
+  const hasLoneInfusion=S.cart.some(i=>i.kind==='infusion') && !S.cart.some(i=>i.kind==='flight');
+  const hasHighball=S.cart.some(i=>i.id==='highball-up');
+  const total=S.cart.reduce((a,i)=>a+i.price,0);
+  const rows=S.cart.length? S.cart.map(i=>`
+      <div class="row"><div><span class="rn">${i.name}</span>${i.chase?`<span class="rk">chase</span>`:''}</div><div class="rp">${i.price}</div></div>`).join('')
+      : `<div class="empty">${t('emptyCart')}<br><span style="font-size:13px">${t('addToOrder')}</span></div>`;
+  el.innerHTML=`
+    <div><div class="eyebrow" data-x>${t('summaryTitle')}</div></div>
+    <div class="rows">${rows}
+      ${S.cart.length?`<div class="totrow"><div class="tl">${t('total')}</div><div class="tp">${total}</div></div>`:''}
+    </div>
+    ${(hasLoneInfusion&&!hasHighball)?`
+      <div class="upsell"><div class="ug"><div class="lbl">✦</div><div class="uname">${t('highballNudge')}</div></div>
+      <button class="addbtn" onclick="addHighballUp()">${t('highballAdd')}</button></div>`:''}
+    <div class="stack">
+      <button class="cta" onclick="showBartender()">${t('showBartender')}</button>
+      <button class="linkline" onclick="go('s2')">${t('another')}</button>
+    </div>`;
+}
+function addHighballUp(){
+  S.cart.push({id:'highball-up',name:t('highballAdd'),price:3,kind:'highball'});
+  buildSummary(); toast(t('added'));
+}
+function showBartender(){
+  const el=document.getElementById('confirmList');
+  const total=S.cart.reduce((a,i)=>a+i.price,0);
+  el.innerHTML = S.cart.length? S.cart.map(i=>`<div class="row"><div class="rn">${i.name}</div><div class="rp">${i.price}</div></div>`).join('')
+     + `<div class="totrow"><div class="tl">${t('total')}</div><div class="tp">${total}</div></div>`
+     : `<div class="empty">${t('emptyCart')}</div>`;
+  go('sc');
+}
+function addS7(){
+  S.cart.push({id:'s7-highball',name:"Carrot & Dill Highball",price:9,kind:'highball'});
+  showBartender();
+  toast(t('added'));
+}
+
+/* quick menu */
+function buildQuick(){
+  document.getElementById('qmList').innerHTML=QMENU.map(c=>`
+    <div class="qcat"><div class="qh"><div class="qn">${c.n}</div><div class="qp">${c.p}</div></div>
+    <div class="qi">${c[S.lang]||c.en}</div></div>`).join('');
+}
+
+/* toast */
+let toastT;
+function toast(m){
+  const el=document.getElementById('toast'); el.textContent=m; el.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'),1900);
+}
+
+/* init */
+applyI18n(); buildFlights();
+</script>
+
+</body>
+</html>
