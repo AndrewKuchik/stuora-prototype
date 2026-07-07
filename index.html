@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#08040b">
-<title>STUORA — интерактивное меню</title>
+<title>STUORA</title>
 </head>
 <body>
 <style>
@@ -226,8 +226,8 @@ body{
   position:relative;padding:0 20px calc(24px + env(safe-area-inset-bottom))}
 
 /* top bar */
-.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 8px;position:sticky;top:0;z-index:5;
-  background:linear-gradient(180deg,var(--bg) 55%,rgba(8,4,11,0))}
+.top{display:flex;align-items:center;justify-content:space-between;padding:calc(12px + env(safe-area-inset-top)) 0 10px;position:sticky;top:0;z-index:5}
+.top::before{content:"";position:absolute;left:-20px;right:-20px;top:0;bottom:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,var(--bg) 0%,rgba(8,4,11,.7) 46%,rgba(8,4,11,0) 100%);-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .brand{font-family:var(--display);font-size:26px;line-height:1;letter-spacing:.14em;color:var(--text);
   text-shadow:0 0 16px rgba(194,24,91,.7),0 0 3px rgba(247,241,247,.4);cursor:pointer;user-select:none}
 .brand .spark{color:var(--magenta)}
@@ -506,32 +506,32 @@ const T = {
     step1:"Шаг 1",step2:"Шаг 2",moodTitle:"Какой у вас вечер?",
     mood_relax:"Расслабиться",mood_romance:"Романтика",mood_discover:"Хочу открытие",mood_classic:"Классика",mood_surprise:"Удиви меня",
     clarifyTitle:"Сладкое — или пикантное?",clarify_sweet:"🍇 Сладкое",clarify_spicy:"🌶 Пикантное · умами",
-    take:"Беру",another:"Другой вариант",wantFlight:"Хочу флайт вместо",pairsWith:"Отлично к паре",add:"Добавить",added:"В заказе ✓",
-    flightEyebrow:"Флайт · 15",flightTitle:"Соберите путешествие",flightSub:"3 настойки на гравированной доске — see & taste.",
-    compare_single:"1 настойка",compare_flight:"Флайт из 3",compare_best:"★ лучший выбор",compare_cremant:"Crémant для двоих",chooseFlight:"Выбрать флайт",
+    take:"Беру",another:"Другой вариант",wantFlight:"Лучше дегустацию из 3",pairsWith:"Отлично к паре",add:"Добавить",added:"В заказе ✓",
+    flightEyebrow:"Дегустация · 15",flightTitle:"Соберите свою дегустацию",flightSub:"Три маленькие настойки на пробу — сравните вкусы на гравированной доске.",
+    compare_single:"1 настойка",compare_flight:"Три настойки",compare_best:"★ лучший выбор",compare_cremant:"Crémant для двоих",chooseFlight:"Выбрать дегустацию",
     summaryTitle:"Ваш выбор",total:"Итого",highballNudge:"Удлинить настойку домашней комбучей?",highballAdd:"Хайбол +3",
     showBartender:"Показать бармену",cremantNudge:"Сделайте вечер событием — Crémant для двоих",
     confirmTitle:"Покажите этот экран бармену",confirmSub:"Бумажное меню и бармен всегда рядом — это лишь ваш гид.",
     laterHour:"…через час за столом",startOver:"Заново",secondRound:"Второй раунд",
     s7Title:"Не желаете ещё один — на этот раз что-то освежающее?",s7pick:"Carrot & Dill Highball",notNow:"Не сейчас",
     quickMenuTitle:"Меню",backGuide:"← Гид",quickHint:"Signature — первыми: самые фирменные бокалы бара.",
-    lvSoon:"Латышский — в разработке для пилота",emptyCart:"Пока ничего не выбрано",addToOrder:"Добавьте, что понравится"},
+    lvSoon:"Латышский — в разработке для пилота",tastingWord:"дегустация",emptyCart:"Пока ничего не выбрано",addToOrder:"Добавьте, что понравится"},
   en:{menu:"Menu",entryTag:"Curious?",entryLine:"Build your Baltic flight — warm, local, yours.",
     continue:"Continue →",justMenu:"Just show the menu",
     paperNote:"The paper menu and bartender are always here — this is only your taste guide.",
     step1:"Step 1",step2:"Step 2",moodTitle:"What kind of evening?",
     mood_relax:"Relax",mood_romance:"Romance",mood_discover:"Discover",mood_classic:"Classic",mood_surprise:"Surprise me",
     clarifyTitle:"Sweet — or savoury?",clarify_sweet:"🍇 Sweet",clarify_spicy:"🌶 Savoury · umami",
-    take:"I'll take it",another:"Another one",wantFlight:"A flight instead",pairsWith:"Perfect chase",add:"Add",added:"Added ✓",
-    flightEyebrow:"Flight · 15",flightTitle:"Build your journey",flightSub:"3 infusions on an engraved board — see & taste.",
-    compare_single:"1 infusion",compare_flight:"Flight of 3",compare_best:"★ best pick",compare_cremant:"Crémant for two",chooseFlight:"Choose flight",
+    take:"I'll take it",another:"Another one",wantFlight:"A tasting of 3 instead",pairsWith:"Perfect chase",add:"Add",added:"Added ✓",
+    flightEyebrow:"Tasting · 15",flightTitle:"Build your tasting",flightSub:"Three little infusions to taste and compare, on an engraved board.",
+    compare_single:"1 infusion",compare_flight:"Three infusions",compare_best:"★ best pick",compare_cremant:"Crémant for two",chooseFlight:"Choose tasting",
     summaryTitle:"Your choice",total:"Total",highballNudge:"Stretch your infusion with house kombucha?",highballAdd:"Highball +3",
     showBartender:"Show the bartender",cremantNudge:"Make it an occasion — Crémant for two",
     confirmTitle:"Show this screen to the bartender",confirmSub:"The paper menu and bartender are always here — this is only your guide.",
     laterHour:"…an hour later at the table",startOver:"Start over",secondRound:"Second round",
     s7Title:"One more — something refreshing this time?",s7pick:"Carrot & Dill Highball",notNow:"Not now",
     quickMenuTitle:"Menu",backGuide:"← Guide",quickHint:"Signature first — the bar's most distinctive glasses.",
-    lvSoon:"Latvian — coming for the pilot",emptyCart:"Nothing selected yet",addToOrder:"Add whatever you like"}
+    lvSoon:"Latvian — coming for the pilot",tastingWord:"tasting",emptyCart:"Nothing selected yet",addToOrder:"Add whatever you like"}
 };
 const QMENU = [
   {n:"Signature",p:"10",ru:"Tomato & Sprats Mary · Carrot & Dill · Cowberry Negroni · Clover Club · Cherry Boulevardier",en:"Tomato & Sprats Mary · Carrot & Dill · Cowberry Negroni · Clover Club · Cherry Boulevardier"},
@@ -660,7 +660,7 @@ function confirmFlight(){
   if(!S.selFlight) return;
   const f=FLIGHTS[S.selFlight];
   S.cart=S.cart.filter(i=>i.kind!=='flight');
-  S.cart.push({id:'flight-'+S.selFlight,name:(f[S.lang]||f.en)+' flight',price:15,kind:'flight'});
+  S.cart.push({id:'flight-'+S.selFlight,name:(f[S.lang]||f.en)+' · '+t('tastingWord'),price:15,kind:'flight'});
   buildSummary(); go('s6');
 }
 
